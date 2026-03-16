@@ -1,64 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181 209">
-  <defs>
-    <!-- Arrowhead marker pointing in path direction -->
-    <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-      <path d="M 0,0 L 9,4.5 L 0,9 Z" fill="#F6921E"/>
-    </marker>
-    <!-- Subtle inner glow for cloud -->
-    <filter id="softglow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 181 209">
 
-  <!-- Hexagon background: deep navy -->
+  <!-- Hexagon fill: white -->
   <polygon points="90.5,0 181,52.25 181,156.75 90.5,209 0,156.75 0,52.25"
-           fill="#1B3A5C"/>
+           fill="white"/>
 
-  <!-- ── Sync arrows ──────────────────────────────────────────────────────
-       Circle: r=52, centre (90.5, 91)
-       SVG angle convention: 0°=right, 90°=bottom, 180°=left, 270°=top
-       Point formula: x = cx + r·cos θ,  y = cy + r·sin θ
+  <!-- ── rclone official symbol, centred ──────────────────────────────────
+       Original viewBox 0 0 256 257; scaled to 120×120, centred at (90.5, 91)
+       so x = 90.5 - 60 = 30.5, y = 91 - 60 = 31
+  ──────────────────────────────────────────────────────────────────────── -->
+  <svg x="30.5" y="31" width="120" height="120"
+       viewBox="0 0 256 257"
+       style="overflow:visible;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,0,-213)">
+      <g transform="matrix(3.85779,0,0,3.85779,-459.077,-1271.68)">
+        <clipPath id="rc1">
+          <rect x="119" y="385" width="66.359" height="66.359"/>
+        </clipPath>
+        <g clip-path="url(#rc1)">
+          <g transform="matrix(0.57336,0,0,0.57336,23.1139,331.755)">
+            <!-- light cyan segment -->
+            <g transform="matrix(1.65888,0,0,1.65888,278.227,196.518)">
+              <path d="M0,-26.524C-2.206,-30.345 -5.416,-33.225 -9.105,-35.023C-9.577,-32.503 -10.47,-30.019 -11.823,-27.675L-13.958,-23.97C-12.536,-23.18 -11.298,-22.017 -10.425,-20.505C-7.86,-16.063 -9.383,-10.381 -13.826,-7.816C-18.268,-5.251 -23.95,-6.773 -26.515,-11.216L-30.823,-18.666L-37.775,-18.666L-41.251,-12.646L-36.94,-5.197C-31.05,5.004 -18.007,8.499 -7.806,2.609C2.394,-3.28 5.889,-16.323 0,-26.524"
+                    style="fill:rgb(112,202,242);fill-rule:nonzero;"/>
+            </g>
+            <!-- pale sky segment -->
+            <g transform="matrix(1.65888,0,0,1.65888,242.791,151.553)">
+              <path d="M0,-30.703C-10.201,-36.592 -23.244,-33.097 -29.133,-22.897C-31.34,-19.076 -32.228,-14.856 -31.941,-10.762C-29.523,-11.613 -26.925,-12.082 -24.218,-12.082L-19.943,-12.086C-19.97,-13.712 -19.581,-15.366 -18.709,-16.877C-16.143,-21.32 -10.462,-22.843 -6.019,-20.277C-1.576,-17.712 -0.054,-12.031 -2.619,-7.588L-6.916,-0.132L-3.441,5.889L3.511,5.888L7.806,-1.57C13.696,-11.77 10.201,-24.814 0,-30.703"
+                    style="fill:rgb(180,227,249);fill-rule:nonzero;"/>
+            </g>
+            <!-- dark blue segment -->
+            <g transform="matrix(1.65888,0,0,1.65888,214.076,150.846)">
+              <path d="M0,23.335L-2.142,19.634C-3.537,20.471 -5.163,20.961 -6.908,20.961C-12.039,20.961 -16.198,16.802 -16.198,11.671C-16.198,6.541 -12.039,2.382 -6.908,2.382L1.697,2.376L5.174,-3.644L1.697,-9.664L-6.909,-9.656C-18.688,-9.656 -28.236,-0.107 -28.236,11.671C-28.236,23.45 -18.688,32.999 -6.909,32.999C-2.498,32.999 1.599,31.659 5,29.366C3.054,27.697 1.353,25.678 0,23.335"
+                    style="fill:rgb(63,121,173);fill-rule:nonzero;"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
 
-       Gaps at ≈ 0° (right) and 180° (left), 20° wide each side.
-       Arrow 1 (top arc, clockwise, left→right through top):
-         start 200° → end 340°  (140° CW arc through 270°/top)
-       Arrow 2 (bottom arc, clockwise, right→left through bottom):
-         start  20° → end 160°  (140° CW arc through  90°/bottom)
-  ────────────────────────────────────────────────────────────────────── -->
-  <!-- Arrow 1: 200° (43.5, 73.2)  →  340° (137.5, 73.2) CW through top -->
-  <path d="M 43.5,73.2 A 52,52 0 0 1 137.5,73.2"
-        fill="none" stroke="#F6921E" stroke-width="6.5" stroke-linecap="round"
-        marker-end="url(#ah)"/>
-  <!-- Arrow 2: 20° (137.5, 108.8) →  160° (43.5, 108.8) CW through bottom -->
-  <path d="M 137.5,108.8 A 52,52 0 0 1 43.5,108.8"
-        fill="none" stroke="#F6921E" stroke-width="6.5" stroke-linecap="round"
-        marker-end="url(#ah)"/>
-
-  <!-- ── Cloud ─────────────────────────────────────────────────────────── -->
-  <!-- bumps -->
-  <circle cx="77"   cy="89"  r="13"  fill="white"/>
-  <circle cx="91"   cy="83"  r="15"  fill="white"/>
-  <circle cx="106"  cy="88"  r="12"  fill="white"/>
-  <!-- body / flat base -->
-  <rect   x="64"    y="89"   width="55" height="16" rx="1" fill="white"/>
-  <ellipse cx="91.5" cy="100" rx="27.5" ry="10"    fill="white"/>
-
-  <!-- ── R letter ──────────────────────────────────────────────────────── -->
-  <text x="91" y="112"
-        text-anchor="middle"
-        font-family="Georgia, 'DejaVu Serif', serif"
-        font-size="20" font-weight="bold"
-        fill="#1B3A5C">R</text>
-
-  <!-- ── Package name ──────────────────────────────────────────────────── -->
-  <text x="90.5" y="184"
+  <!-- Package name in rclone dark blue -->
+  <text x="90.5" y="181"
         text-anchor="middle"
         font-family="'Helvetica Neue', Arial, sans-serif"
-        font-size="19" font-weight="bold" letter-spacing="0.5"
-        fill="white">rcloner</text>
+        font-size="21" font-weight="bold" letter-spacing="0.5"
+        fill="#3F79AD">rcloner</text>
 
-  <!-- ── Hexagon border: rclone orange ─────────────────────────────────── -->
+  <!-- Hexagon border in rclone dark blue -->
   <polygon points="90.5,0 181,52.25 181,156.75 90.5,209 0,156.75 0,52.25"
-           fill="none" stroke="#F6921E" stroke-width="5.5"/>
+           fill="none" stroke="#3F79AD" stroke-width="6"/>
 </svg>
