@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  rcloner: rcloner.html
+last_built: 2026-03-16T21:44Z
+urls:
+  reference: https://boettiger-lab.github.io/rcloner/reference
+  article: https://boettiger-lab.github.io/rcloner/articles
