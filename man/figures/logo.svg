@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181 209">
+  <defs>
+    <!-- Arrowhead marker pointing in path direction -->
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M 0,0 L 9,4.5 L 0,9 Z" fill="#F6921E"/>
+    </marker>
+    <!-- Subtle inner glow for cloud -->
+    <filter id="softglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hexagon background: deep navy -->
+  <polygon points="90.5,0 181,52.25 181,156.75 90.5,209 0,156.75 0,52.25"
+           fill="#1B3A5C"/>
+
+  <!-- ── Sync arrows ──────────────────────────────────────────────────────
+       Circle: r=52, centre (90.5, 91)
+       SVG angle convention: 0°=right, 90°=bottom, 180°=left, 270°=top
+       Point formula: x = cx + r·cos θ,  y = cy + r·sin θ
+
+       Gaps at ≈ 0° (right) and 180° (left), 20° wide each side.
+       Arrow 1 (top arc, clockwise, left→right through top):
+         start 200° → end 340°  (140° CW arc through 270°/top)
+       Arrow 2 (bottom arc, clockwise, right→left through bottom):
+         start  20° → end 160°  (140° CW arc through  90°/bottom)
+  ────────────────────────────────────────────────────────────────────── -->
+  <!-- Arrow 1: 200° (43.5, 73.2)  →  340° (137.5, 73.2) CW through top -->
+  <path d="M 43.5,73.2 A 52,52 0 0 1 137.5,73.2"
+        fill="none" stroke="#F6921E" stroke-width="6.5" stroke-linecap="round"
+        marker-end="url(#ah)"/>
+  <!-- Arrow 2: 20° (137.5, 108.8) →  160° (43.5, 108.8) CW through bottom -->
+  <path d="M 137.5,108.8 A 52,52 0 0 1 43.5,108.8"
+        fill="none" stroke="#F6921E" stroke-width="6.5" stroke-linecap="round"
+        marker-end="url(#ah)"/>
+
+  <!-- ── Cloud ─────────────────────────────────────────────────────────── -->
+  <!-- bumps -->
+  <circle cx="77"   cy="89"  r="13"  fill="white"/>
+  <circle cx="91"   cy="83"  r="15"  fill="white"/>
+  <circle cx="106"  cy="88"  r="12"  fill="white"/>
+  <!-- body / flat base -->
+  <rect   x="64"    y="89"   width="55" height="16" rx="1" fill="white"/>
+  <ellipse cx="91.5" cy="100" rx="27.5" ry="10"    fill="white"/>
+
+  <!-- ── R letter ──────────────────────────────────────────────────────── -->
+  <text x="91" y="112"
+        text-anchor="middle"
+        font-family="Georgia, 'DejaVu Serif', serif"
+        font-size="20" font-weight="bold"
+        fill="#1B3A5C">R</text>
+
+  <!-- ── Package name ──────────────────────────────────────────────────── -->
+  <text x="90.5" y="184"
+        text-anchor="middle"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="19" font-weight="bold" letter-spacing="0.5"
+        fill="white">rcloner</text>
+
+  <!-- ── Hexagon border: rclone orange ─────────────────────────────────── -->
+  <polygon points="90.5,0 181,52.25 181,156.75 90.5,209 0,156.75 0,52.25"
+           fill="none" stroke="#F6921E" stroke-width="5.5"/>
+</svg>

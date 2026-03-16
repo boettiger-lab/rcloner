@@ -1,0 +1,72 @@
+url: https://boettiger-lab.github.io/rcloner/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+home:
+  sidebar:
+    structure: [links, license, community, citation, authors, dev]
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/boettiger-lab/rcloner
+      aria-label: GitHub
+
+reference:
+  - title: "Binary installation"
+    desc: "Install and locate the rclone binary."
+    contents:
+      - install_rclone
+
+  - title: "Low-level interface"
+    desc: "Run any rclone command directly."
+    contents:
+      - rclone
+
+  - title: "Remote configuration"
+    desc: "Create and manage cloud storage remotes."
+    contents:
+      - rclone_config_create
+      - rclone_config_set
+      - rclone_config_show
+      - rclone_config_delete
+      - rclone_listremotes
+
+  - title: "Listing and metadata"
+    desc: "List objects and retrieve metadata."
+    contents:
+      - rclone_ls
+      - rclone_lsd
+      - rclone_stat
+      - rclone_size
+
+  - title: "File transfer"
+    desc: "Copy, move, and synchronise files."
+    contents:
+      - rclone_copy
+      - rclone_move
+      - rclone_sync
+      - rclone_copyurl
+
+  - title: "File operations"
+    desc: "Read, create, and delete files and directories."
+    contents:
+      - rclone_cat
+      - rclone_mkdir
+      - rclone_rmdir
+      - rclone_delete
+      - rclone_purge
+
+  - title: "Utilities"
+    desc: "Miscellaneous rclone utilities."
+    contents:
+      - rclone_check
+      - rclone_link
+      - rclone_about
+      - rclone_version
