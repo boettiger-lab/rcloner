@@ -133,10 +133,8 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Works on local paths too — no cloud account needed</span></span>
 <span><span class="fu"><a href="reference/rclone_ls.html">rclone_ls</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, files_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                       Path                     Name   Size</span></span>
-<span><span class="co">#&gt; 1 callr-env-2819ce52fd8700 callr-env-2819ce52fd8700 262298</span></span>
-<span><span class="co">#&gt;                   MimeType                             ModTime IsDir</span></span>
-<span><span class="co">#&gt; 1 application/octet-stream 2026-03-16T14:32:59.514146342-07:00 FALSE</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] Path     Name     Size     MimeType ModTime  IsDir   </span></span>
+<span><span class="co">#&gt; &lt;0 rows&gt; (or 0-length row.names)</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Cloud path</span></span>
 <span><span class="fu"><a href="reference/rclone_ls.html">rclone_ls</a></span><span class="op">(</span><span class="st">"aws:my-bucket"</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -281,7 +279,6 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/boettiger-lab/rcloner/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/boettiger-lab/rcloner/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/boettiger-lab/rcloner?branch=main" class="external-link"><img src="https://codecov.io/gh/boettiger-lab/rcloner/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://CRAN.R-project.org/package=rcloner" class="external-link"><img src="https://www.r-pkg.org/badges/version/rcloner" alt="CRAN status"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 </ul>
 </div>
