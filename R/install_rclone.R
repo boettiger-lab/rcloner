@@ -53,6 +53,20 @@ install_rclone <- function(force = FALSE,
   invisible(binary)
 }
 
+#' Check whether rclone is available
+#'
+#' Returns `TRUE` if the rclone binary can be found and executed.
+#' Useful as a condition for `\examplesIf`.
+#'
+#' @return Logical scalar.
+#' @export
+#' @examples
+#' rclone_available()
+rclone_available <- function() {
+  bin <- rclone_binary()
+  fs::file_exists(bin) || nzchar(Sys.which("rclone"))
+}
+
 #' @keywords internal
 rclone_binary <- function(dir = getOption("rcloner.dir",
                                           tools::R_user_dir("rcloner", "data"))) {

@@ -8,8 +8,6 @@
 [![R-CMD-check](https://github.com/boettiger-lab/rcloner/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/boettiger-lab/rcloner/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/boettiger-lab/rcloner/branch/main/graph/badge.svg)](https://app.codecov.io/gh/boettiger-lab/rcloner?branch=main)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/rcloner)](https://CRAN.R-project.org/package=rcloner)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
@@ -100,10 +98,8 @@ rclone_config_create(
 ``` r
 # Works on local paths too — no cloud account needed
 rclone_ls(tempdir(), files_only = TRUE)
-#>                       Path                     Name   Size
-#> 1 callr-env-2819ce52fd8700 callr-env-2819ce52fd8700 262298
-#>                   MimeType                             ModTime IsDir
-#> 1 application/octet-stream 2026-03-16T14:32:59.514146342-07:00 FALSE
+#> [1] Path     Name     Size     MimeType ModTime  IsDir   
+#> <0 rows> (or 0-length row.names)
 ```
 
 ``` r

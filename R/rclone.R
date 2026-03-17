@@ -14,8 +14,9 @@
 #'   (invisibly).
 #' @export
 #' @examples
-#' \dontrun{
+#' \examplesIf{rclone_available()}
 #' rclone("version")
+#' \dontrun{
 #' rclone(c("ls", "myremote:mybucket"))
 #' }
 rclone <- function(args = character(),

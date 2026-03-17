@@ -164,8 +164,8 @@ rclone_copy("aws:my-bucket/report.csv", "/local/downloads/")
 
 # Copy a URL directly to cloud storage (no local intermediate)
 rclone_copyurl(
-  "https://example.com/dataset.csv",
-  "aws:my-bucket/dataset.csv"
+  "https://raw.githubusercontent.com/tidyverse/readr/main/inst/extdata/mtcars.csv",
+  "aws:my-bucket/mtcars.csv"
 )
 ```
 

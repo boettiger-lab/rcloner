@@ -45,6 +45,10 @@ rclone_config_create <- function(name, type, ...) {
 #' @param ... Named parameters to set (key = value).
 #' @return Invisibly, the result of the rclone command.
 #' @export
+#' @examples
+#' \dontrun{
+#' rclone_config_set("myremote", region = "us-west-2")
+#' }
 rclone_config_set <- function(name, ...) {
   params <- list(...)
   args <- c("config", "update", name)
@@ -60,6 +64,9 @@ rclone_config_set <- function(name, ...) {
 #' @return Character string with the configuration (invisibly). Also prints
 #'   to the console.
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' rclone_config_show()
 rclone_config_show <- function(name = NULL) {
   args <- c("config", "show")
   if (!is.null(name)) args <- c(args, name)
@@ -73,6 +80,10 @@ rclone_config_show <- function(name = NULL) {
 #' @param name Remote name to delete.
 #' @return Invisibly, the result of the rclone command.
 #' @export
+#' @examples
+#' \dontrun{
+#' rclone_config_delete("myremote")
+#' }
 rclone_config_delete <- function(name) {
   invisible(rclone(c("config", "delete", name)))
 }
@@ -81,6 +92,9 @@ rclone_config_delete <- function(name) {
 #'
 #' @return Character vector of remote names.
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' rclone_listremotes()
 rclone_listremotes <- function() {
   result <- rclone("listremotes")
   remotes <- strsplit(trimws(result$stdout), "\n")[[1]]

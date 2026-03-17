@@ -10,9 +10,15 @@
 #' @return Invisibly, the rclone result list.
 #' @export
 #' @examples
+#' \examplesIf{rclone_available()}
+#' src <- tempfile()
+#' dir.create(src)
+#' writeLines("hello", file.path(src, "file.txt"))
+#' dest <- tempfile()
+#' rclone_copy(src, dest)
+#' list.files(dest)
 #' \dontrun{
 #' rclone_copy("myremote:bucket/file.csv", "/tmp/file.csv")
-#' rclone_copy("/local/dir", "myremote:bucket/dir", progress = TRUE)
 #' }
 rclone_copy <- function(src, dest, progress = FALSE, ...) {
   args <- c("copy", src, dest)
@@ -29,6 +35,13 @@ rclone_copy <- function(src, dest, progress = FALSE, ...) {
 #' @inheritParams rclone_copy
 #' @return Invisibly, the rclone result list.
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' src <- tempfile()
+#' dir.create(src)
+#' writeLines("hello", file.path(src, "file.txt"))
+#' dest <- tempfile()
+#' rclone_move(src, dest)
 rclone_move <- function(src, dest, progress = FALSE, ...) {
   args <- c("move", src, dest)
   if (progress) args <- c(args, "--progress")
@@ -45,6 +58,12 @@ rclone_move <- function(src, dest, progress = FALSE, ...) {
 #' @return Invisibly, the rclone result list.
 #' @export
 #' @examples
+#' \examplesIf{rclone_available()}
+#' src <- tempfile()
+#' dir.create(src)
+#' writeLines("hello", file.path(src, "file.txt"))
+#' dest <- tempfile()
+#' rclone_sync(src, dest)
 #' \dontrun{
 #' rclone_sync("myremote:bucket", "/local/backup")
 #' }
@@ -64,6 +83,10 @@ rclone_sync <- function(src, dest, progress = FALSE, ...) {
 #' @param ... Additional rclone flags.
 #' @return Invisibly, the rclone result list.
 #' @export
+#' @examples
+#' \dontrun{
+#' rclone_copyurl("https://example.com/data.csv", "myremote:bucket/data.csv")
+#' }
 rclone_copyurl <- function(url, dest, ...) {
   invisible(rclone(c("copyurl", url, dest, ...)))
 }

@@ -16,9 +16,11 @@
 #'   `ModTime`, `IsDir`, and optionally others returned by rclone.
 #' @export
 #' @examples
+#' \examplesIf{rclone_available()}
+#' rclone_ls(tempdir())
+#' rclone_ls(tempdir(), recursive = TRUE)
 #' \dontrun{
 #' rclone_ls("myremote:mybucket")
-#' rclone_ls("myremote:mybucket/prefix", recursive = TRUE)
 #' }
 rclone_ls <- function(path, recursive = FALSE, dirs_only = FALSE,
                        files_only = FALSE, ...) {
@@ -50,6 +52,9 @@ empty_ls_df <- function() {
 #' @inheritParams rclone_ls
 #' @return A data frame (see [rclone_ls()]).
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' rclone_lsd(tempdir())
 rclone_lsd <- function(path, recursive = FALSE, ...) {
   rclone_ls(path, recursive = recursive, dirs_only = TRUE, ...)
 }
@@ -59,6 +64,11 @@ rclone_lsd <- function(path, recursive = FALSE, ...) {
 #' @param path Remote path to a single object.
 #' @return A one-row data frame with object metadata, or an error if not found.
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' f <- tempfile()
+#' writeLines("hello", f)
+#' rclone_stat(f)
 rclone_stat <- function(path) {
   # lsjson on a file returns info for that file
   result <- rclone(c("lsjson", path))
@@ -72,6 +82,9 @@ rclone_stat <- function(path) {
 #' @return A named list with `count` (number of objects) and `bytes` (total
 #'   size in bytes).
 #' @export
+#' @examples
+#' \examplesIf{rclone_available()}
+#' rclone_size(tempdir())
 rclone_size <- function(path) {
   result <- rclone(c("size", "--json", path))
   jsonlite::fromJSON(result$stdout)
