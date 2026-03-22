@@ -1,0 +1,19 @@
+# R build artifacts
+*.tar.gz
+*.Rcheck/
+*.Rproj
+
+# R session
+.Rhistory
+.RData
+.Ruserdata
+
+# Generated docs
+docs/
+inst/doc/
+
+# pkgdown
+_pkgdown.yml
+
+# Claude / editor
+.claude/

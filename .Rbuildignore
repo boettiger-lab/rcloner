@@ -1,6 +1,6 @@
 ^\.claude$
-^LICENSE\.md$
 ^\.github$
+^\.gitignore$
 ^.*\.Rproj$
 ^_pkgdown\.yml$
 ^docs$
@@ -9,3 +9,7 @@
 ^README\.html$
 ^cran-comments\.md$
 ^\.lintr$
+^CRAN-SUBMISSION$
+^LICENSE\.md$
+^.*\.tar\.gz$
+^.*\.Rcheck$
