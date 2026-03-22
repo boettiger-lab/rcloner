@@ -6,8 +6,7 @@
 #' @param path Remote path to the file.
 #' @return Character string with the file content.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' tmp <- tempfile(fileext = ".txt")
 #' writeLines("hello rclone", tmp)
 #' txt <- rclone_cat(tmp)
@@ -30,8 +29,7 @@ rclone_cat <- function(path) {
 #' @param ... Additional rclone flags.
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' d <- tempfile()
 #' dir.create(d)
 #' writeLines("hi", file.path(d, "f.txt"))
@@ -45,8 +43,7 @@ rclone_delete <- function(path, ...) {
 #' @param path Remote path to the directory.
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' d <- tempfile()
 #' dir.create(d)
 #' rclone_rmdir(d)
@@ -61,8 +58,7 @@ rclone_rmdir <- function(path) {
 #' @param path Remote path to purge.
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' d <- tempfile()
 #' dir.create(d)
 #' writeLines("hi", file.path(d, "f.txt"))
@@ -76,8 +72,7 @@ rclone_purge <- function(path) {
 #' @param path Remote path to create.
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' d <- tempfile()
 #' rclone_mkdir(d)
 rclone_mkdir <- function(path) {
@@ -94,8 +89,7 @@ rclone_mkdir <- function(path) {
 #' @param ... Additional rclone flags.
 #' @return Invisibly, the rclone result list (check stderr for differences).
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' src <- tempfile()
 #' dir.create(src)
 #' dest <- tempfile()
@@ -109,8 +103,7 @@ rclone_check <- function(src, dest, ...) {
 #'
 #' @return Invisibly, a character string with the version output.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' rclone_version()
 rclone_version <- function() {
   result <- rclone("version")

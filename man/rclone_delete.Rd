@@ -18,3 +18,11 @@ Invisibly, the rclone result list.
 Deletes the files (not directories) at the given path. To remove a directory
 and all its contents use \code{\link[=rclone_purge]{rclone_purge()}}.
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+d <- tempfile()
+dir.create(d)
+writeLines("hi", file.path(d, "f.txt"))
+rclone_delete(d)
+\dontshow{\}) # examplesIf}
+}

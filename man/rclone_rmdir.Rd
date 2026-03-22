@@ -15,3 +15,10 @@ Invisibly, the rclone result list.
 \description{
 Remove an empty directory
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+d <- tempfile()
+dir.create(d)
+rclone_rmdir(d)
+\dontshow{\}) # examplesIf}
+}

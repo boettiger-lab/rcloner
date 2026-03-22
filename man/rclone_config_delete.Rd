@@ -15,3 +15,8 @@ Invisibly, the result of the rclone command.
 \description{
 Delete an rclone remote
 }
+\examples{
+\dontrun{
+rclone_config_delete("myremote")
+}
+}

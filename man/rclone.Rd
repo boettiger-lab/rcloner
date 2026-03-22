@@ -27,8 +27,10 @@ Low-level wrapper that runs any rclone command. Higher-level functions like
 \code{\link[=rclone_copy]{rclone_copy()}}, \code{\link[=rclone_ls]{rclone_ls()}}, etc. call this internally.
 }
 \examples{
-\dontrun{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
 rclone("version")
+\dontrun{
 rclone(c("ls", "myremote:mybucket"))
 }
+\dontshow{\}) # examplesIf}
 }

@@ -12,3 +12,8 @@ Character vector of remote names.
 \description{
 List configured remotes
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_listremotes()
+\dontshow{\}) # examplesIf}
+}

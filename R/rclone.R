@@ -13,8 +13,7 @@
 #' @return A list with elements `status`, `stdout`, `stderr`, and `timeout`
 #'   (invisibly).
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' rclone("version")
 #' \dontrun{
 #' rclone(c("ls", "myremote:mybucket"))
@@ -26,9 +25,11 @@ rclone <- function(args = character(),
 
   bin <- rclone_binary()
   if (!fs::file_exists(bin)) {
-    message("rclone binary not found. Installing...")
-    install_rclone()
-    bin <- rclone_binary()
+    stop(
+      "rclone binary not found. Install it with install_rclone() ",
+      "or from <https://rclone.org/install/>.",
+      call. = FALSE
+    )
   }
 
   if (length(args) == 1L) {

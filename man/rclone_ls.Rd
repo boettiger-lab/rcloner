@@ -30,8 +30,11 @@ Returns a data frame of objects at the given path, parsed from rclone's JSON
 output. This is the primary listing function and maps to \verb{rclone lsjson}.
 }
 \examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_ls(tempdir())
+rclone_ls(tempdir(), recursive = TRUE)
 \dontrun{
 rclone_ls("myremote:mybucket")
-rclone_ls("myremote:mybucket/prefix", recursive = TRUE)
 }
+\dontshow{\}) # examplesIf}
 }

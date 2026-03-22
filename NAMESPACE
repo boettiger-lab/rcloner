@@ -3,6 +3,7 @@
 export(install_rclone)
 export(rclone)
 export(rclone_about)
+export(rclone_available)
 export(rclone_cat)
 export(rclone_check)
 export(rclone_config_create)

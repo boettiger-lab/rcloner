@@ -64,8 +64,7 @@ rclone_config_set <- function(name, ...) {
 #' @return Character string with the configuration (invisibly). Also prints
 #'   to the console.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' rclone_config_show()
 rclone_config_show <- function(name = NULL) {
   args <- c("config", "show")
@@ -92,8 +91,7 @@ rclone_config_delete <- function(name) {
 #'
 #' @return Character vector of remote names.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' rclone_listremotes()
 rclone_listremotes <- function() {
   result <- rclone("listremotes")

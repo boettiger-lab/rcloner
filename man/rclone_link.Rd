@@ -15,3 +15,8 @@ Character string with the public URL.
 \description{
 Not all remotes support this operation.
 }
+\examples{
+\dontrun{
+rclone_link("myremote:bucket/file.csv")
+}
+}

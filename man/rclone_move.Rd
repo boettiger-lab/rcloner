@@ -22,3 +22,12 @@ Invisibly, the rclone result list.
 Moves files from \code{src} to \code{dest}. Source files are deleted after a
 successful transfer.
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+src <- tempfile()
+dir.create(src)
+writeLines("hello", file.path(src, "file.txt"))
+dest <- tempfile()
+rclone_move(src, dest)
+\dontshow{\}) # examplesIf}
+}

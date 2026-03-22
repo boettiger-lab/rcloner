@@ -15,3 +15,8 @@ A list with quota details (free, used, total bytes).
 \description{
 Get quota information for a remote
 }
+\examples{
+\dontrun{
+rclone_about("myremote:")
+}
+}

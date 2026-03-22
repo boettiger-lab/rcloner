@@ -16,3 +16,8 @@ to the console.
 \description{
 Show rclone configuration
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_config_show()
+\dontshow{\}) # examplesIf}
+}

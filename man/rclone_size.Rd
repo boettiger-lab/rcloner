@@ -16,3 +16,8 @@ size in bytes).
 \description{
 Get total size of a remote path
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_size(tempdir())
+\dontshow{\}) # examplesIf}
+}

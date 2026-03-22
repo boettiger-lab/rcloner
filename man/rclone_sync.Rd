@@ -23,7 +23,14 @@ Makes \code{dest} identical to \code{src}, \strong{deleting} files in \code{dest
 in \code{src}. Use \code{\link[=rclone_copy]{rclone_copy()}} if you do not want deletions.
 }
 \examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+src <- tempfile()
+dir.create(src)
+writeLines("hello", file.path(src, "file.txt"))
+dest <- tempfile()
+rclone_sync(src, dest)
 \dontrun{
 rclone_sync("myremote:bucket", "/local/backup")
 }
+\dontshow{\}) # examplesIf}
 }

@@ -9,8 +9,7 @@
 #' @param ... Additional rclone flags as character strings.
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' src <- tempfile()
 #' dir.create(src)
 #' writeLines("hello", file.path(src, "file.txt"))
@@ -35,8 +34,7 @@ rclone_copy <- function(src, dest, progress = FALSE, ...) {
 #' @inheritParams rclone_copy
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' src <- tempfile()
 #' dir.create(src)
 #' writeLines("hello", file.path(src, "file.txt"))
@@ -57,8 +55,7 @@ rclone_move <- function(src, dest, progress = FALSE, ...) {
 #' @inheritParams rclone_copy
 #' @return Invisibly, the rclone result list.
 #' @export
-#' @examples
-#' \examplesIf{rclone_available()}
+#' @examplesIf rclone_available()
 #' src <- tempfile()
 #' dir.create(src)
 #' writeLines("hello", file.path(src, "file.txt"))

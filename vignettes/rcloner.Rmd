@@ -10,13 +10,18 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  eval = nzchar(Sys.which("rclone"))
+  comment = "#>"
 )
 ```
 
 ```{r setup}
 library(rcloner)
+has_rclone <- rclone_available()
+if (!has_rclone) {
+  message("rclone is not installed on this system. ",
+          "Code chunks that require rclone are skipped. ",
+          "Install with install_rclone().")
+}
 ```
 
 ## Overview
@@ -62,7 +67,7 @@ stores it in a user-writable directory — no system privileges required.
 
 Check the installed version:
 
-```{r version}
+```{r version, eval = has_rclone}
 rclone_version()
 ```
 
@@ -109,7 +114,7 @@ rclone_listremotes()
 
 ### Local paths (no credentials needed)
 
-```{r ls-local}
+```{r ls-local, eval = has_rclone}
 # List a local directory
 rclone_ls(tempdir(), files_only = TRUE)
 ```
@@ -137,7 +142,7 @@ columns `Path`, `Name`, `Size`, `MimeType`, `ModTime`, and `IsDir`.
 `rclone_copy()` copies files from source to destination, skipping identical
 files.  It never deletes destination files.
 
-```{r copy-local}
+```{r copy-local, eval = has_rclone}
 src  <- tempfile()
 dest <- tempfile()
 dir.create(src)
@@ -148,7 +153,7 @@ rclone_copy(src, dest)
 list.files(dest)
 ```
 
-```{r cleanup-copy, echo=FALSE}
+```{r cleanup-copy, echo = FALSE, eval = has_rclone}
 unlink(src,  recursive = TRUE)
 unlink(dest, recursive = TRUE)
 ```

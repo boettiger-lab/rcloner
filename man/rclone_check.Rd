@@ -20,3 +20,12 @@ Invisibly, the rclone result list (check stderr for differences).
 Compares the files in \code{src} and \code{dest} without transferring anything.
 Differences are reported as messages.
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+src <- tempfile()
+dir.create(src)
+dest <- tempfile()
+dir.create(dest)
+rclone_check(src, dest)
+\dontshow{\}) # examplesIf}
+}

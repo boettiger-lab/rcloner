@@ -17,8 +17,14 @@ Reads the content of a remote file and returns it as a character string,
 analogous to \code{cat} on the command line.
 }
 \examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+tmp <- tempfile(fileext = ".txt")
+writeLines("hello rclone", tmp)
+txt <- rclone_cat(tmp)
+cat(txt)
 \dontrun{
 txt <- rclone_cat("myremote:bucket/readme.txt")
 cat(txt)
 }
+\dontshow{\}) # examplesIf}
 }

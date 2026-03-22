@@ -17,3 +17,8 @@ Invisibly, the result of the rclone command.
 \description{
 Set individual parameters on an existing remote
 }
+\examples{
+\dontrun{
+rclone_config_set("myremote", region = "us-west-2")
+}
+}

@@ -19,3 +19,8 @@ Invisibly, the rclone result list.
 \description{
 Downloads a URL and uploads it to \code{dest} without storing it locally first.
 }
+\examples{
+\dontrun{
+rclone_copyurl("https://example.com/data.csv", "myremote:bucket/data.csv")
+}
+}

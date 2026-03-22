@@ -23,8 +23,15 @@ Copies files from \code{src} to \code{dest}, skipping files that are identical.
 Does not delete files at the destination.
 }
 \examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+src <- tempfile()
+dir.create(src)
+writeLines("hello", file.path(src, "file.txt"))
+dest <- tempfile()
+rclone_copy(src, dest)
+list.files(dest)
 \dontrun{
 rclone_copy("myremote:bucket/file.csv", "/tmp/file.csv")
-rclone_copy("/local/dir", "myremote:bucket/dir", progress = TRUE)
 }
+\dontshow{\}) # examplesIf}
 }

@@ -15,3 +15,11 @@ Invisibly, the rclone result list.
 \description{
 Deletes all files and directories under \code{path}. Use with caution.
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+d <- tempfile()
+dir.create(d)
+writeLines("hi", file.path(d, "f.txt"))
+rclone_purge(d)
+\dontshow{\}) # examplesIf}
+}

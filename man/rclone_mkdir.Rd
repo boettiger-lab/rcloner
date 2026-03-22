@@ -15,3 +15,9 @@ Invisibly, the rclone result list.
 \description{
 Create a directory or bucket
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+d <- tempfile()
+rclone_mkdir(d)
+\dontshow{\}) # examplesIf}
+}

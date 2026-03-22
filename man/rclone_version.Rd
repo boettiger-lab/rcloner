@@ -12,3 +12,8 @@ Invisibly, a character string with the version output.
 \description{
 Show rclone version information
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_version()
+\dontshow{\}) # examplesIf}
+}

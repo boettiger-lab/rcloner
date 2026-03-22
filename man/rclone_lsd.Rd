@@ -22,3 +22,8 @@ A data frame (see \code{\link[=rclone_ls]{rclone_ls()}}).
 \description{
 Convenience wrapper around \code{\link[=rclone_ls]{rclone_ls()}} that returns only directories.
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+rclone_lsd(tempdir())
+\dontshow{\}) # examplesIf}
+}

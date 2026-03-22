@@ -15,3 +15,10 @@ A one-row data frame with object metadata, or an error if not found.
 \description{
 Get metadata for a single object
 }
+\examples{
+\dontshow{if (rclone_available()) withAutoprint(\{ # examplesIf}
+f <- tempfile()
+writeLines("hello", f)
+rclone_stat(f)
+\dontshow{\}) # examplesIf}
+}
